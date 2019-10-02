@@ -1976,7 +1976,9 @@
 				$element.one('load.owl.lazy', $.proxy(function() {
 					$element.css('opacity', 1);
 					this._core.trigger('loaded', { element: $element, url: url }, 'lazy');
-				}, this)).attr('src', url);
+				}, this))
+					.attr('src', url)
+                    .attr('srcset', $element.attr('data-srcset'));
             } else if ($element.is('source')) {
                 $element.one('load.owl.lazy', $.proxy(function() {
                     this._core.trigger('loaded', { element: $element, url: url }, 'lazy');
