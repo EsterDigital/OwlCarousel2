@@ -1978,7 +1978,9 @@
                 if (width <= 10) {
                     width = $element.parent().width();
                 }
+
                 console.log('width', width);
+
                 $element.one('load.owl.lazy', $.proxy(function() {
                     $element.css('opacity', 1);
                     this._core.trigger('loaded', { element: $element, url: url }, 'lazy');
